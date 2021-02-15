@@ -26,11 +26,16 @@ const data = {
 
 export default function Detail() {
     const [pilihan, setPilihan] = useState([1, 2, 3])
-    const [result, setResult] = useState(true)
+    const [result, setResult] = useState(false)
 
     function buat () {
         Router.push('/')
     }
+
+    function pilih (i) {
+        setResult(true)
+    }
+
     return (
         <div className={styles.container}>
             <main className={styles.main}>
@@ -45,7 +50,7 @@ export default function Detail() {
                     {
                         pilihan.map((item, i) => {
                             return (
-                                <div><button className={styles.btn} style={{ width: '100%', height: '50px' }}>Pilihan {i + 1}</button><br /></div>
+                                <div key={i}><button className={styles.btn} style={{ width: '100%', height: '50px' }} onClick={() => pilih(i)}>Pilihan {i + 1}</button><br /></div>
                             )
                         })
                     }

@@ -84,6 +84,7 @@
 .btn:active {
   border: none;
   outline: none;
+  background-color: rgb(9, 85, 129);
 }
 
 .btnDel:hover,
